@@ -20,3 +20,10 @@ document.querySelector(".next").addEventListener("click", () => {
     slideIndex++;
     showSlides(slideIndex);
 });
+
+
+// forms
+
+document.querySelectorAll('input[type=number]').forEach(input => {
+  if (input.value === '0') input.value = '';
+});
