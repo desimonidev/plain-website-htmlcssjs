@@ -4,11 +4,12 @@
     box-sizing: border-box;
     font-style: normal;
     text-decoration: none;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #CAA5A6;
+    font-family: "Poppins", sans-serifs;
+    background-color: #E7F0F2;
 }
 
 /*   NAV BAR ------------------------------------------------------ NAV BAR -----------------------------------------------------------------------------
@@ -34,7 +35,7 @@ body {
     position: fixed;
     z-index: 1000;
     margin: 0 auto;
-    top: 20px;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -80,11 +81,12 @@ body {
 .nav-links :hover{
     transform: scale(1.05);
     font-size: 1.15em;
+    color: #4CAF50;
 }
 
 .nav {
-    color: black;
-    font-weight: bold;
+    color: #555;
+    font-weight: 500;
     font-size: 1.3em;
 }
 
@@ -105,12 +107,14 @@ body {
     font-weight: bolder;
     transition: background-color 0.3s, transform 0.2s;
     outline: 4px solid #25D366;
+    box-shadow: #66BB6A;
     outline-offset: 5px;
 }
 
 .agende-sua-consulta:hover {
     background-color: #128C7E;
-    transform: scale(1.05);
+    transform: scale(1.2);
+    color: white;
 }
 
 /*   NAV BAR ------------------------------------------------------ CAROUSEL -----------------------------------------------------------------------------
@@ -125,12 +129,12 @@ body {
 
 .carousel {
     position: relative;
-    max-width: 1300px;
-    height: 600px;
+    max-width: 1100px;
+    height: 400px;
     margin: auto;
     overflow: hidden;
     border-radius: 10px;
-    margin-top: 120px;
+    margin-top: 160px;
 }
 
 .carousel-slide:first-child {
@@ -196,7 +200,7 @@ body {
     margin: 40px auto;
     background-color: #E0E0E1;
     border-radius: 10px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .tratamentos-mais-buscados div {
@@ -219,6 +223,12 @@ body {
     height: 300px;
     border-radius: 50%;
     margin-bottom: 10px;
+    outline: 2px solid #555;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.tratamentos-mais-buscados img:hover{
+    filter: brightness(60%);
 }
 
 /*           -------------------------------------------------------- FORMS -------------------------------------------------------------------------------
