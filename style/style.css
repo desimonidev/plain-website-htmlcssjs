@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-style: normal;
     text-decoration: none;
     font-family: "Poppins", sans-serif;
 }
@@ -10,7 +9,7 @@
 body {
     font-family: "Poppins", sans-serifs;
     /* background-color: #E7F0F2; */
-    background-color: #F5F7FA;
+    background-color: #FFF5F7;
 }
 
 /*   NAV BAR ------------------------------------------------------ NAV BAR -----------------------------------------------------------------------------
@@ -23,23 +22,26 @@ body {
 */
 
 .nav-bar {
-    /* background-color: #E0E0E1; */
-    background-color: #E3F2FD;
+    background-color: #F8BBD0;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 90%;
     max-width: 1000px;
-    margin: 20px auto;
     padding: 20px 30px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     position: fixed;
     z-index: 1000;
-    margin: 0 auto;
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.nav-links li a:hover {
+    transform: scale(1.05);
+    color: #EC407A;
+    transition: all 0.3s ease;
 }
 
 .logo-ac {
@@ -88,11 +90,11 @@ body {
 .nav-links :hover{
     transform: scale(1.05);
     font-size: 1em;
-    color: #4CAF50;
+    color: #EC407A;
 }
 
 .nav {
-    color: #555;
+    color: #333333;
     font-weight: 500;
     font-size: 1em;
 }
@@ -120,7 +122,7 @@ body {
 .agende-sua-consulta:hover {
     background-color: #1EBE5D;
     transform: scale(1.1);
-    color: white;
+    color: white !important;
 }
 
 /*   NAV BAR ------------------------------------------------------ CAROUSEL -----------------------------------------------------------------------------
@@ -140,7 +142,9 @@ body {
     margin: auto;
     overflow: hidden;
     border-radius: 10px;
-    margin-top: 160px;
+    margin-top: 140px;
+    border: 10px solid #F8BBD0;
+    background-color: #F8BBD0;
 }
 
 .carousel-slide:first-child {
@@ -152,22 +156,26 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .carousel-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
+    display: block;
 }
 
 .caption {
     position: absolute;
     bottom: 15px;
     left: 20px;
-    color: white;
-    background-color: rgba(0,0,0,0.5);
+    color: #444;
+    background-color: rgba(248, 187, 208, 0.6);
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 1em;
 }
 
@@ -201,23 +209,31 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
-    gap: 20px;
+    gap: 10px;
     max-width: 1000px;
     margin: 40px auto;
-    background-color: #ffffff;
+    background-color: #F8BBD0;
     border-radius: 10px;
     padding: 10px;
 }
 
 .tratamentos-mais-buscados div {
+    background-color: #FFE8CC;
     display: flex;
     align-items: center;
     flex-direction: column;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
     gap: 20px;
+    margin-bottom: -10px;
+}
+
+.tratamentos-mais-buscados div:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .tratamentos-mais-buscados h1 {
@@ -229,13 +245,19 @@ body {
     height: 200px;
     image-resolution: initial;
     border-radius: 50%;
-    margin-bottom: 10px;
     outline: 2px solid #555;
     transition: filter 0.3s ease, transform 0.3s ease;
 }
 
-.tratamentos-mais-buscados img:hover{
-    filter: brightness(60%);
+.tratamentos-mais-buscados img:hover {
+    filter: brightness(80%);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .tratamentos-mais-buscados {
+        grid-template-columns: 1fr;
+    }
 }
 
 /*           -------------------------------------------------------- FORMS -------------------------------------------------------------------------------
@@ -248,50 +270,81 @@ body {
 */
 
 .contato {
-    background-color: #E8F5E9;
+    background-color: #F8BBD0;
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     align-items: center;
-    gap: 30px;
+    gap: 50px;
     width: 90%;
     max-width: 1000px;
     margin: 20px auto;
-    padding: 10px 30px;
-    border-radius: 6px;
+    padding: 30px;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin: 0 auto;
     color: #333;
 }
 
-.form-container{
+.form-container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
     max-width: 500px;
 }
 
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 .contato h1 {
-    font-size: 1.3em;
+    font-size: 2em;
+    font-weight: 300;
 }
 
-.contato input{
-    margin-top: 20px;
-    padding: 10px;
+.contato input,
+.contato textarea {
+    width: 100%;
+    padding: 12px;
     border: 1px solid #DCE3EC;
-    outline: none;
-    outline-style: none;
     border-radius: 20px;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    outline: none;
 }
 
-.contato input:focus, .contato textarea:focus {
-    border-color: #90CAF9;;
-    box-shadow: 0 0 5px rgba(144, 202, 249, 0.3);
+.contato textarea {
+    height: 150px;
+    resize: none;
 }
 
-.contato ::placeholder{
+.contato input:focus,
+.contato textarea:focus {
+    border-color: #EC407A;
+    box-shadow: 0 0 5px rgba(236, 64, 122, 0.3);
+}
+
+.contato ::placeholder {
     color: #555;
     font-family: "Poppins", sans-serif;
     font-size: 15px;
+}
+
+.contato button {
+    align-self: flex-start;
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.contato button:hover {
+    transform: translateY(-2px) scale(1.05);
 }
 
 input[type=number] {
@@ -314,17 +367,18 @@ input[type=number]::-moz-inner-spin-button {
 }
 
 .contato button {
-    margin-top: 30px;
     width: 200px;
     height: 40px;
-    background-color: #E3F2FD;
+    background-color: #25D366;
     border: none;
     border-radius: 20px;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    outline-offset: 5px;
 }
 
 .contato button:hover {
-    background-color: #90CAF9;
+    background-color: #66BB6A;
 }
 
 .contato img {
